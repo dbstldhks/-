@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>카카오톡 버튼있는 메시지 전송하기</title>
+<script id="javascript-sdk" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+</head>
+<body>
+<p><strong>아래 카카오톡 아이콘을 눌러 전송하기</strong> By. dbstldhks</p>
+<a id="kakao-link-btn" href="javascript:sendLink()">
+  <img
+    src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
+  />
+</a>
+  <!-- 심심해..... -->
+<script type="text/javascript">
+ Kakao.init('c256e8d446feaeee89f3ee0eedccc76f');
+  function sendLink() {
+    Kakao.Link.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: '채팅방 가입하기👌',
+        description: '채팅방에 가입하여 친구들과 이야기 해보세요😊',
+        imageUrl:
+          'https://search.pstatic.net/sunny/?src=https%3A%2F%2Fcdn2.iconfinder.com%2Fdata%2Ficons%2Fsocial-icons-circular-color%2F512%2Fyoutube-512.png&type=a340',
+        link: {
+          mobileWebUrl: '사진클릭시 모바일 주소',
+          webUrl: '사진클릭시 PC 주소',
+        },
+      },
+      social: {
+        likeCount: 99999, //99999가 최대입니다
+        commentCount: 99999, //99999가 최대입니다
+        sharedCount: 99999, //99999가 최대입니다
+      },
+      buttons: [
+        {
+          title: '지금 바로 가입하기',
+          link: {
+            mobileWebUrl: 'kakao3.kro.kr',
+            webUrl: 'kakao3.kro.kr',
+          },
+        },
+      ],
+    })
+  }
+</script>
+<!-- www.blackcats4567.com -->
+<!-- 이미지/버튼 클릭 시 주소는 Kakao Developers의 애플리케이션 > 플랫폼 > Web에 넣어야 클릭했을때 성공적으로 표시됩니다 -->
+  </body>
+</html>
